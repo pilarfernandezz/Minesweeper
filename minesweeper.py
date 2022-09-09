@@ -236,7 +236,6 @@ class MinesweeperAI():
         sentence = Sentence(neighbors, neighborsCount)
         self.knowledge.append(sentence)
 
-
         # 4 # 5
         newInferences = []
         for k in self.knowledge:
@@ -260,7 +259,6 @@ class MinesweeperAI():
                 for s in k.known_safes():
                     self.mark_safe(s)
 
-
     def inferences(self, newInferences, sentence, set1, set2):
         difference = [x for x in set1.cells if x not in set2.cells]
         if set1.count == set2.count:
@@ -271,7 +269,6 @@ class MinesweeperAI():
                 self.mark_mine(m)
         else:
             newInferences.append(Sentence(difference, set1.count - set2.count))
-
 
     def make_safe_move(self):
         """
